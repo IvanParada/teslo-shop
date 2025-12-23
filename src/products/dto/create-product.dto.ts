@@ -29,7 +29,6 @@ export class CreateProductDto {
 
     @IsString({ each: true })
     @IsArray()
-    @MinLength(1)
     sizes: string[];
 
 
