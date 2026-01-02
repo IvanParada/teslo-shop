@@ -2,7 +2,9 @@ import { Column, Entity, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from "t
 import { Product } from "./product.entity";
 
 
-@Entity()
+@Entity({
+    name: 'products'
+})
 export class ProductImage {
 
     @PrimaryGeneratedColumn()
