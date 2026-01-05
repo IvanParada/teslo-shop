@@ -37,7 +37,6 @@ export class ProductsService {
       this.handleDBExceptions(error);
     }
 
-
   }
 
   async findAll(paginationDto: PaginationDto) {
