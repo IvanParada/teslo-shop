@@ -3,7 +3,7 @@ import { Product } from "./product.entity";
 
 
 @Entity({
-    name: 'products'
+    name: 'products_images'
 })
 export class ProductImage {
 
