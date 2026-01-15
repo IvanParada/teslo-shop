@@ -31,7 +31,7 @@ export class AuthService {
       return {
         ...result,
         token: this.getJwtToken({
-          email: result.email
+          id: result.id
         })
       }
 
@@ -47,7 +47,8 @@ export class AuthService {
       where: { email },
       select: {
         email: true,
-        password: true
+        password: true,
+        id: true,
       }
     });
 
@@ -61,7 +62,7 @@ export class AuthService {
     return {
       ...user,
       token: this.getJwtToken({
-        email: user.email
+        id: user.id
       })
     }
   }
