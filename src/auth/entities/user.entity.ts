@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column, BeforeUpdate, BeforeInsert } from "typeorm";
+import { Product } from "src/products/entities";
+import { Entity, PrimaryGeneratedColumn, Column, BeforeUpdate, BeforeInsert, OneToMany } from "typeorm";
 
 
 @Entity('users')
@@ -29,6 +30,12 @@ export class User {
         default: ['USER_ROLE']
     })
     role: string[];
+
+    @OneToMany(
+        () => Product,
+        (product) => product.user
+    )
+    product: Product;
 
     @BeforeInsert()
     checkFieldsBeforeInsert() {
