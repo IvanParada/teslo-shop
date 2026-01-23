@@ -12,6 +12,7 @@ import { AuthModule } from './auth/auth.module';
 @Module({
   imports: [ConfigModule.forRoot(),
   TypeOrmModule.forRoot({
+    ssl: process.env.STAGE === 'prod',
     type: 'postgres',
     host: process.env.DB_HOST,
     port: +process.env.DB_PORT!,
@@ -30,7 +31,7 @@ import { AuthModule } from './auth/auth.module';
     CommonModule,
     SeedModule,
     FilesModule,
-    AuthModule
+    AuthModule,
   ],
   controllers: [],
   providers: [],
